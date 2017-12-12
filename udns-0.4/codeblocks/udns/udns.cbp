@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="udns" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/udns" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/udns" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-m64" />
+			<Add option="-DHAVE_CONFIG_H" />
+		</Compiler>
+		<Linker>
+			<Add option="-m64" />
+		</Linker>
+		<Unit filename="../../config.h" />
+		<Unit filename="../../getopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../inet_XtoX.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../rblcheck.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns.h" />
+		<Unit filename="../../udns_XtoX.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_bl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_codes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_dn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_dntosp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_jran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_resolver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_a.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_mx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_naptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_ptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_srv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../udns_rr_txt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
