@@ -131,7 +131,6 @@ distclean: clean
 	rm -f $(UTILS) $(SOUTILS)
 	rm -f config.status config.h Makefile
 
-
 Makefile: configure configure.lib Makefile.in
 	./configure
 	@echo
