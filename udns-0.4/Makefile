@@ -27,6 +27,7 @@ ifdef arch
 	ARCH:=$(arch)
 endif
 
+
 SRCS   = udns_dn.c udns_dntosp.c udns_parse.c udns_resolver.c udns_init.c \
 	udns_misc.c udns_XtoX.c \
 	udns_rr_a.c udns_rr_ptr.c udns_rr_mx.c udns_rr_txt.c udns_bl.c \
@@ -51,7 +52,14 @@ SOUTILS = $(USRCS:.c=_s)
 
 NAMEPFX = $(NAME)-$(VERS)
 
-CC = gcc
+ifeq ($(ARCH),armv7ahf)
+	CXX := armv7-rpi2-linux-gnueabihf-g++
+	CC := armv7-rpi2-linux-gnueabihf-gcc
+	AR := armv7-rpi2-linux-gnueabihf-ar
+else
+	CC = gcc
+endif
+
 CFLAGS = -Wall -W -O2 -pipe
 
 ifeq ($(ARCH),x86_64)
