@@ -52,7 +52,7 @@ SOUTILS = $(USRCS:.c=_s)
 
 NAMEPFX = $(NAME)-$(VERS)
 
-ifeq ($(ARCH),armv7ahf)
+ifeq ($(ARCH),armv7a)
 	CXX := armv7-rpi2-linux-gnueabihf-g++
 	CC := armv7-rpi2-linux-gnueabihf-gcc
 	AR := armv7-rpi2-linux-gnueabihf-ar
