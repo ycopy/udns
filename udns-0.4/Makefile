@@ -70,7 +70,7 @@ ifeq ($(ARCH), i386)
 	CFLAGS := -m32 $(CFLAGS)
 endif
 
-CDEFS = -DHAVE_CONFIG_H
+CDEFS = -DHAVE_CONFIG_H -DGETOPT_MY
 LD = $(CC)
 LDFLAGS = 
 LIBS = 
