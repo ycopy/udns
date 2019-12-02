@@ -19,14 +19,10 @@
 # License along with this library, in file named COPYING.LGPL; if not,
 # write to the Free Software Foundation, Inc., 59 Temple Place,
 # Suite 330, Boston, MA  02111-1307  USA
+
 NAME   = udns
 VERS   = 0.4
 SOVER  = 0
-ARCH	= x86_64
-ifdef arch
-	ARCH:=$(arch)
-endif
-
 
 SRCS   = udns_dn.c udns_dntosp.c udns_parse.c udns_resolver.c udns_init.c \
 	udns_misc.c udns_XtoX.c \
@@ -52,25 +48,9 @@ SOUTILS = $(USRCS:.c=_s)
 
 NAMEPFX = $(NAME)-$(VERS)
 
-ifeq ($(ARCH),armv7a)
-	CXX := armv7-rpi2-linux-gnueabihf-g++
-	CC := armv7-rpi2-linux-gnueabihf-gcc
-	AR := armv7-rpi2-linux-gnueabihf-ar
-else
-	CC = gcc
-endif
-
-CFLAGS = -Wall -W -O2 -pipe
-
-ifeq ($(ARCH),x86_64)
-	CFLAGS := -m64 $(CFLAGS)
-endif
-
-ifeq ($(ARCH), i386)
-	CFLAGS := -m32 $(CFLAGS)
-endif
-
-CDEFS = -DHAVE_CONFIG_H -DGETOPT_MY
+CC = gcc
+CFLAGS = -m64 -Wall -W -O2 -pipe
+CDEFS = -DHAVE_CONFIG_H
 LD = $(CC)
 LDFLAGS = 
 LIBS = 
@@ -150,6 +130,7 @@ distclean: clean
 	rm -f $(LIB) $(SOLIB) $(SOLIBV) udns.3.html
 	rm -f $(UTILS) $(SOUTILS)
 	rm -f config.status config.h Makefile
+
 
 Makefile: configure configure.lib Makefile.in
 	./configure
