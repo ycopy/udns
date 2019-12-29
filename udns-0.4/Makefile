@@ -20,7 +20,13 @@
 # write to the Free Software Foundation, Inc., 59 Temple Place,
 # Suite 330, Boston, MA  02111-1307  USA
 
-NAME   = udns
+ifdef arch
+	PRJ_ARCH :=$(arch)
+else
+	PRJ_ARCH := x86_64
+endif
+
+
 VERS   = 0.4
 SOVER  = 0
 
@@ -48,9 +54,21 @@ SOUTILS = $(USRCS:.c=_s)
 
 NAMEPFX = $(NAME)-$(VERS)
 
-CC = gcc
+
 CFLAGS = -m64 -Wall -W -O2 -pipe
+
+
 CDEFS = -DHAVE_CONFIG_H
+CC = gcc
+
+
+
+ifeq ($(PRJ_ARCH),armv7a)
+	CC := armv7-rpi2-linux-gnueabihf-gcc
+	AR := armv7-rpi2-linux-gnueabihf-ar
+	CFLAGS := -m32 -Wall -W -O2 -pipe
+endif
+
 LD = $(CC)
 LDFLAGS = 
 LIBS = 
